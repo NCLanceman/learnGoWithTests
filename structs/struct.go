@@ -1,9 +1,24 @@
 package structs
 
-func Perimeter(width float64, height float64) (result float64){
-	return 2*(width + height) 
+import "math"
+
+type Rectangle struct {
+	Width float64
+	Height float64
 }
 
-func Area(width float64, height float64) (result float64){
-	return width * height
+type Circle struct{
+	Radius float64
+}
+
+func (r Rectangle) Perimeter() (result float64){
+	return 2*(r.Width + r.Height) 
+}
+
+func (r Rectangle) Area() (result float64){
+	return r.Width * r.Height
+}
+
+func (c Circle) Area() (result float64){
+	return math.Pi * c.Radius * c.Radius 
 }
